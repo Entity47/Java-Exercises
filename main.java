@@ -9,6 +9,8 @@ class JavaExercises {
             InsertionSortTests sortTests = new InsertionSortTests();
             sortTests.testEmpty();
             sortTests.testSingle();
+            sortTests.testDoubleAscending();
+            sortTests.testDoubleDescending();
             sortTests.testOrderedAscending();
             sortTests.testOrderedDescending();
             sortTests.testUnordered();

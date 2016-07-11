@@ -29,6 +29,30 @@ public class InsertionSortTests {
         Assertions.verify(expected, result);
     }
 
+    public void testDoubleAscending() {
+        // arrange
+        int[] input = new int[] { 1, 2 };
+
+        // act
+        int[] result = InsertionSort.sort(input);
+
+        // assert
+        int[] expected = new int[] { 1, 2 };
+        Assertions.verify(expected, result);
+    }
+
+    public void testDoubleDescending() {
+        // arrange
+        int[] input = new int[] { 2, 1 };
+
+        // act
+        int[] result = InsertionSort.sort(input);
+
+        // assert
+        int[] expected = new int[] { 1, 2 };
+        Assertions.verify(expected, result);
+    }
+
     public void testOrderedAscending() {
         // arrange
         int[] input = new int[] { 1, 2, 3, 4, 5 };
