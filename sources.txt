@@ -1,0 +1,5 @@
+./sorting/insertion/InsertionSort.java
+./sorting/insertion/InsertionSortTests.java
+./core/Assertions.java
+./core/AssertionException.java
+./main.java
