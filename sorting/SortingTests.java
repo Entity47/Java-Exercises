@@ -1,88 +1,90 @@
 
-package sorting.insertion;
+package sorting;
 
 import core.Assertions;
 
-public class InsertionSortTests {
+import sorting.Sorter;
 
-    public void testEmpty() {
+public class SortingTests {
+
+    public static void testEmpty(Sorter sorter) {
         // arrange
         int[] input = new int[0];
 
         // act
-        int[] result = InsertionSort.sort(input);
+        int[] result = sorter.sort(input);
 
         // assert
         int[] expected = new int[0];
         Assertions.verify(expected, result);
     }
 
-    public void testSingle() {
+    public static void testSingle(Sorter sorter) {
         // arrange
         int[] input = new int[] { 1 };
 
         // act
-        int[] result = InsertionSort.sort(input);
+        int[] result = sorter.sort(input);
 
         // assert
         int[] expected = new int[] { 1 };
         Assertions.verify(expected, result);
     }
 
-    public void testDoubleAscending() {
+    public static void testDoubleAscending(Sorter sorter) {
         // arrange
         int[] input = new int[] { 1, 2 };
 
         // act
-        int[] result = InsertionSort.sort(input);
+        int[] result = sorter.sort(input);
 
         // assert
         int[] expected = new int[] { 1, 2 };
         Assertions.verify(expected, result);
     }
 
-    public void testDoubleDescending() {
+    public static void testDoubleDescending(Sorter sorter) {
         // arrange
         int[] input = new int[] { 2, 1 };
 
         // act
-        int[] result = InsertionSort.sort(input);
+        int[] result = sorter.sort(input);
 
         // assert
         int[] expected = new int[] { 1, 2 };
         Assertions.verify(expected, result);
     }
 
-    public void testOrderedAscending() {
+    public static void testOrderedAscending(Sorter sorter) {
         // arrange
         int[] input = new int[] { 1, 2, 3, 4, 5 };
 
         // act
-        int[] result = InsertionSort.sort(input);
+        int[] result = sorter.sort(input);
 
         // assert
         int[] expected = new int[] { 1, 2, 3, 4, 5 };
         Assertions.verify(expected, result);
     }
 
-    public void testOrderedDescending() {
+    public static void testOrderedDescending(Sorter sorter) {
         // arrange
         int[] input = new int[] { 5, 4, 3, 2, 1 };
 
         // act
-        int[] result = InsertionSort.sort(input);
+        int[] result = sorter.sort(input);
 
         // assert
         int[] expected = new int[] { 1, 2, 3, 4, 5 };
         Assertions.verify(expected, result);
     }
 
-    public void testUnordered() {
+    public static void testUnordered(Sorter sorter) {
         // arrange
         int[] input = new int[] { 5, 1, 3, 2, 4 };
 
         // act
-        int[] result = InsertionSort.sort(input);
+        int[] result = sorter.sort(input);
 
         // assert
         int[] expected = new int[] { 1, 2, 3, 4, 5 };
