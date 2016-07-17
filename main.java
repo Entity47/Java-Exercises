@@ -30,12 +30,13 @@ class JavaExercises {
             SortingTests.testOrderedDescending(mergeSort);
             SortingTests.testUnordered(mergeSort);
         } catch (AssertionException e) {
-            String message = "Failed: " + e.getClass().getName();
+            String message = "FAIL\t\t" + e.getTestName() + " - " + e.getSorter();
+            System.out.println(message);
+
             String exceptionMessage = e.getMessage();
             if (exceptionMessage != null) {
-                message += "\n" + e.getMessage();
+                System.out.println(exceptionMessage);
             }
-            System.out.println(message);
         }
 
     }
