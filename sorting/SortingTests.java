@@ -9,6 +9,7 @@ public class SortingTests {
 
     public static void testEmpty(Sorter sorter) {
         // arrange
+        String testDescription = sorter.getClass().getName() + " - testEmpty";
         int[] input = new int[0];
 
         // act
@@ -16,11 +17,12 @@ public class SortingTests {
 
         // assert
         int[] expected = new int[0];
-        Assertions.verify(expected, result);
+        Assertions.verify(testDescription, input, expected, result);
     }
 
     public static void testSingle(Sorter sorter) {
         // arrange
+        String testDescription = sorter.getClass().getName() + " - testSingle";
         int[] input = new int[] { 1 };
 
         // act
@@ -28,11 +30,12 @@ public class SortingTests {
 
         // assert
         int[] expected = new int[] { 1 };
-        Assertions.verify(expected, result);
+        Assertions.verify(testDescription, input, expected, result);
     }
 
     public static void testDoubleAscending(Sorter sorter) {
         // arrange
+        String testDescription = sorter.getClass().getName() + " - testDoubleAscending";
         int[] input = new int[] { 1, 2 };
 
         // act
@@ -40,11 +43,12 @@ public class SortingTests {
 
         // assert
         int[] expected = new int[] { 1, 2 };
-        Assertions.verify(expected, result);
+        Assertions.verify(testDescription, input, expected, result);
     }
 
     public static void testDoubleDescending(Sorter sorter) {
         // arrange
+        String testDescription = sorter.getClass().getName() + " - testDoubleDescending";
         int[] input = new int[] { 2, 1 };
 
         // act
@@ -52,11 +56,12 @@ public class SortingTests {
 
         // assert
         int[] expected = new int[] { 1, 2 };
-        Assertions.verify(expected, result);
+        Assertions.verify(testDescription, input, expected, result);
     }
 
     public static void testOrderedAscending(Sorter sorter) {
         // arrange
+        String testDescription = sorter.getClass().getName() + " - testOrderedAscending";
         int[] input = new int[] { 1, 2, 3, 4, 5 };
 
         // act
@@ -64,11 +69,12 @@ public class SortingTests {
 
         // assert
         int[] expected = new int[] { 1, 2, 3, 4, 5 };
-        Assertions.verify(expected, result);
+        Assertions.verify(testDescription, input, expected, result);
     }
 
     public static void testOrderedDescending(Sorter sorter) {
         // arrange
+        String testDescription = sorter.getClass().getName() + " - testOrderedDescending";
         int[] input = new int[] { 5, 4, 3, 2, 1 };
 
         // act
@@ -76,11 +82,12 @@ public class SortingTests {
 
         // assert
         int[] expected = new int[] { 1, 2, 3, 4, 5 };
-        Assertions.verify(expected, result);
+        Assertions.verify(testDescription, input, expected, result);
     }
 
     public static void testUnordered(Sorter sorter) {
         // arrange
+        String testDescription = sorter.getClass().getName() + " - testUnordered";
         int[] input = new int[] { 5, 1, 3, 2, 4 };
 
         // act
@@ -88,6 +95,6 @@ public class SortingTests {
 
         // assert
         int[] expected = new int[] { 1, 2, 3, 4, 5 };
-        Assertions.verify(expected, result);
+        Assertions.verify(testDescription, input, expected, result);
     }
 }
