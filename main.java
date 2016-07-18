@@ -3,16 +3,14 @@ import core.AssertionException;
 
 import sorting.SortingTests;
 import sorting.sort.InsertionSort;
-import sorting.sort.MergeSort;
+import sorting.sort.SelectionSort;
 
 class JavaExercises {
     public static void main(String[] args) {
 
-        InsertionSort insertionSort = new InsertionSort();
-        MergeSort mergeSort = new MergeSort();
-
         try {
             // Test insertion sorting
+            InsertionSort insertionSort = new InsertionSort();
             SortingTests.testEmpty(insertionSort);
             SortingTests.testSingle(insertionSort);
             SortingTests.testDoubleAscending(insertionSort);
@@ -21,7 +19,8 @@ class JavaExercises {
             SortingTests.testOrderedDescending(insertionSort);
             SortingTests.testUnordered(insertionSort);
 
-            // Test merge sorting
+            // Test selection sorting
+            SelectionSort mergeSort = new SelectionSort();
             SortingTests.testEmpty(mergeSort);
             SortingTests.testSingle(mergeSort);
             SortingTests.testDoubleAscending(mergeSort);
@@ -29,15 +28,24 @@ class JavaExercises {
             SortingTests.testOrderedAscending(mergeSort);
             SortingTests.testOrderedDescending(mergeSort);
             SortingTests.testUnordered(mergeSort);
+
+            printGreen("Passed all tests!");
         } catch (AssertionException e) {
             String message = "FAIL\t\t" + e.getTestName() + " - " + e.getSorter();
-            System.out.println(message);
+            printRed(message);
 
             String exceptionMessage = e.getMessage();
             if (exceptionMessage != null) {
-                System.out.println(exceptionMessage);
+                printRed(exceptionMessage);
             }
         }
+    }
 
+    private static void printGreen(String message) {
+        System.out.println((char)27 + "[32m" + message + (char)27 + "[0m");
+    }
+
+    private static void printRed(String message) {
+        System.out.println((char)27 + "[31m" + message + (char)27 + "[0m");
     }
 }
