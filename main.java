@@ -4,9 +4,12 @@ import core.AssertionException;
 import sorting.SortingTests;
 import sorting.sort.InsertionSort;
 import sorting.sort.SelectionSort;
+import sorting.sort.MergeSort;
 
 class JavaExercises {
     public static void main(String[] args) {
+
+        // TODO: Simplify running of tests to prevent redundency
 
         try {
             // Test insertion sorting
@@ -18,9 +21,21 @@ class JavaExercises {
             SortingTests.testOrderedAscending(insertionSort);
             SortingTests.testOrderedDescending(insertionSort);
             SortingTests.testUnordered(insertionSort);
+            printGreen("Success - Insertion Sort");
 
             // Test selection sorting
-            SelectionSort mergeSort = new SelectionSort();
+            SelectionSort selectionSort = new SelectionSort();
+            SortingTests.testEmpty(selectionSort);
+            SortingTests.testSingle(selectionSort);
+            SortingTests.testDoubleAscending(selectionSort);
+            SortingTests.testDoubleDescending(selectionSort);
+            SortingTests.testOrderedAscending(selectionSort);
+            SortingTests.testOrderedDescending(selectionSort);
+            SortingTests.testUnordered(selectionSort);
+            printGreen("Success - Selection Sort");
+
+            // Test merge sorting
+            MergeSort mergeSort = new MergeSort();
             SortingTests.testEmpty(mergeSort);
             SortingTests.testSingle(mergeSort);
             SortingTests.testDoubleAscending(mergeSort);
@@ -28,8 +43,9 @@ class JavaExercises {
             SortingTests.testOrderedAscending(mergeSort);
             SortingTests.testOrderedDescending(mergeSort);
             SortingTests.testUnordered(mergeSort);
+            printGreen("Success - Merge Sort");
 
-            printGreen("Passed all tests!");
+            printGreen("\nPASSED ALL TESTS!");
         } catch (AssertionException e) {
             String message = "FAIL\t\t" + e.getTestName() + " - " + e.getSorter();
             printRed(message);

@@ -1,4 +1,5 @@
 ./sorting/sort/InsertionSort.java
+./sorting/sort/MergeSort.java
 ./sorting/sort/SelectionSort.java
 ./sorting/Sorter.java
 ./sorting/SortingTests.java
