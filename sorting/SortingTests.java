@@ -7,7 +7,17 @@ import sorting.Sorter;
 
 public class SortingTests {
 
-    public static void testEmpty(Sorter sorter) {
+    public static void testSort(Sortable sorter) {
+        testEmpty(sorter);
+        testSingle(sorter);
+        testDoubleAscending(sorter);
+        testDoubleDescending(sorter);
+        testOrderedAscending(sorter);
+        testOrderedDescending(sorter);
+        testUnordered(sorter);
+    }
+
+    private static void testEmpty(Sortable sorter) {
         // arrange
         int[] input = new int[0];
 
@@ -19,7 +29,7 @@ public class SortingTests {
         Assertions.verify(sorter, "testEmpty", input, expected, result);
     }
 
-    public static void testSingle(Sorter sorter) {
+    private static void testSingle(Sortable sorter) {
         // arrange
         int[] input = new int[] { 1 };
 
@@ -31,7 +41,7 @@ public class SortingTests {
         Assertions.verify(sorter, "testSingle", input, expected, result);
     }
 
-    public static void testDoubleAscending(Sorter sorter) {
+    private static void testDoubleAscending(Sortable sorter) {
         // arrange
         int[] input = new int[] { 1, 2 };
 
@@ -43,7 +53,7 @@ public class SortingTests {
         Assertions.verify(sorter, "testDoubleAscending", input, expected, result);
     }
 
-    public static void testDoubleDescending(Sorter sorter) {
+    private static void testDoubleDescending(Sortable sorter) {
         // arrange
         int[] input = new int[] { 2, 1 };
 
@@ -55,7 +65,7 @@ public class SortingTests {
         Assertions.verify(sorter, "testDoubleDescending", input, expected, result);
     }
 
-    public static void testOrderedAscending(Sorter sorter) {
+    private static void testOrderedAscending(Sortable sorter) {
         // arrange
         int[] input = new int[] { 1, 2, 3, 4, 5 };
 
@@ -67,7 +77,7 @@ public class SortingTests {
         Assertions.verify(sorter, "testOrderedAscending", input, expected, result);
     }
 
-    public static void testOrderedDescending(Sorter sorter) {
+    private static void testOrderedDescending(Sortable sorter) {
         // arrange
         int[] input = new int[] { 5, 4, 3, 2, 1 };
 
@@ -79,7 +89,7 @@ public class SortingTests {
         Assertions.verify(sorter, "testOrderedDescending", input, expected, result);
     }
 
-    public static void testUnordered(Sorter sorter) {
+    private static void testUnordered(Sortable sorter) {
         // arrange
         int[] input = new int[] { 5, 1, 3, 2, 4 };
 

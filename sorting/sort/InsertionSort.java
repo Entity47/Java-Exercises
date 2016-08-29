@@ -1,9 +1,9 @@
 
 package sorting.sort;
 
-import sorting.Sorter;
+import sorting.Sortable;
 
-public class InsertionSort implements Sorter {
+public class InsertionSort implements Sortable {
 
     public int[] sort(int[] data) {
         // TODO: Implement me

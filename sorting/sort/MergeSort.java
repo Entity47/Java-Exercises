@@ -1,13 +1,13 @@
 
 package sorting.sort;
 
-import sorting.Sorter;
+import sorting.Sortable;
 
-public class MergeSort implements Sorter {
+public class MergeSort implements Sortable {
 
     public int[] sort(int[] data) {
         // TODO: Implement me
         return data;
     }
-    
+
 }

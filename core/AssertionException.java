@@ -1,14 +1,14 @@
 
 package core;
 
-import sorting.Sorter;
+import sorting.Sortable;
 
 public class AssertionException extends RuntimeException {
 
-    private final Sorter sorter;
+    private final Sortable sorter;
     private final String testName;
 
-    public AssertionException(Sorter sorter, String testName, String message) {
+    public AssertionException(Sortable sorter, String testName, String message) {
         super(message);
         this.sorter = sorter;
         this.testName = testName;

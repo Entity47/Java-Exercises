@@ -1,7 +1,7 @@
 
 package sorting;
 
-public interface Sorter {
+public interface Sortable {
 
     public int[] sort(int[] data);
 }

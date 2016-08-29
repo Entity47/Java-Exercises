@@ -2,11 +2,11 @@
 package core;
 
 import java.util.Arrays;
-import sorting.Sorter;
+import sorting.Sortable;
 
 public class Assertions {
 
-    public static void verify(Sorter sorter, String testName, int[] input, int[] expected, int[] actual) {
+    public static void verify(Sortable sorter, String testName, int[] input, int[] expected, int[] actual) {
 
         if (expected.length != actual.length) {
             throw new AssertionException(sorter, testName, buildErrorMessage(input, expected, actual));
