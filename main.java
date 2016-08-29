@@ -5,22 +5,23 @@ import sorting.SortingTests;
 import sorting.sort.InsertionSort;
 import sorting.sort.SelectionSort;
 import sorting.sort.MergeSort;
+import sorting.sort.QuickSort;
 
 class JavaExercises {
     public static void main(String[] args) {
 
         try {
-            // Test insertion sorting
             SortingTests.testSort(new InsertionSort());
             printGreen("Success - Insertion Sort");
 
-            // Test selection sorting
             SortingTests.testSort(new SelectionSort());
             printGreen("Success - Selection Sort");
 
-            // Test merge sorting
             SortingTests.testSort(new MergeSort());
             printGreen("Success - Merge Sort");
+
+            SortingTests.testSort(new QuickSort());
+            printGreen("Success - Quick Sort");
 
             printGreen("\nPASSED ALL TESTS!");
         } catch (AssertionException e) {
