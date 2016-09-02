@@ -2,19 +2,33 @@
 package sorting;
 
 import core.Assertions;
-
+import core.AssertionException;
+import core.Printer;
 import sorting.Sorter;
 
 public class SortingTests {
 
     public static void testSort(Sortable sorter) {
-        testEmpty(sorter);
-        testSingle(sorter);
-        testDoubleAscending(sorter);
-        testDoubleDescending(sorter);
-        testOrderedAscending(sorter);
-        testOrderedDescending(sorter);
-        testUnordered(sorter);
+
+        try {
+            testEmpty(sorter);
+            testSingle(sorter);
+            testDoubleAscending(sorter);
+            testDoubleDescending(sorter);
+            testOrderedAscending(sorter);
+            testOrderedDescending(sorter);
+            testUnordered(sorter);
+
+            Printer.printGreen("Success - " + sorter.getClass().getName());
+        } catch (AssertionException e) {
+            String message = String.format("FAIL \t\t %s - %s", e.getTestName(), sorter.getClass().getName());
+            Printer.printRed(message);
+
+            String exceptionMessage = e.getMessage();
+            if (exceptionMessage != null) {
+                Printer.printRed(exceptionMessage);
+            }
+        }
     }
 
     private static void testEmpty(Sortable sorter) {

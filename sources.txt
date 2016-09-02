@@ -6,4 +6,5 @@
 ./sorting/SortingTests.java
 ./core/Assertions.java
 ./core/AssertionException.java
+./core/Printer.java
 ./main.java

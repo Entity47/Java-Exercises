@@ -9,11 +9,11 @@ public class Assertions {
     public static void verify(Sortable sorter, String testName, int[] input, int[] expected, int[] actual) {
 
         if (expected.length != actual.length) {
-            throw new AssertionException(sorter, testName, buildErrorMessage(input, expected, actual));
+            throw new AssertionException(testName, buildErrorMessage(input, expected, actual));
         } else {
             for (int i = 0; i < expected.length; i++) {
                 if (expected[i] != actual[i]) {
-                    throw new AssertionException(sorter, testName, buildErrorMessage(input, expected, actual));
+                    throw new AssertionException(testName, buildErrorMessage(input, expected, actual));
                 }
             }
         }
